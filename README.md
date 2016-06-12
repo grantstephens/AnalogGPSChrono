@@ -14,6 +14,7 @@ Essentially the ublox6 gives the ATtiny85 the GPS speed which the ATTiny85 trans
 # Basic Code Stuff
 
 The code uses the following 3 libraries:
+
 1. [TinyGPS++](http://arduiniana.org/libraries/tinygpsplus/)
 2. [TrinketTone](http://w8bh.net/avr/TrinketTone.pdf)- Note that this was modified to be used in the program
 3. [ATTinyCore](https://github.com/SpenceKonde/ATTinyCore)
@@ -26,6 +27,7 @@ Also note that it is possible to program your ATTiny85 using your Arduino as the
 # TODO
 
 There are a number of little odds and ends I would still like to do.
+
 1. Possible filter over the output, just to smooth it a little, however this will cause a larger delay.
 2. Make the speedo show the number of satellites it has found until it has a lock.
 3. Cooler startup sequence.
