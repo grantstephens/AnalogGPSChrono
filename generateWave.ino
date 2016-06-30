@@ -1,10 +1,12 @@
-void squareWave(uint16_t frequency)
+void squareWave( uint16_t frequency )
 {
-  uint32_t ocr = F_CPU / frequency / 2;
-  uint8_t prescalarBits = 1;
-  if (frequency == 0)TCCR1 = 0x90; // stop the counter
+  if (frequency == 0)
+    TCCR1 = 0x90; // stop the counter
   else
   {
+    uint32_t ocr           = F_CPU / frequency / 2;
+    uint8_t  prescalarBits = 1;
+
     while (ocr > 255)
     {
       prescalarBits++;

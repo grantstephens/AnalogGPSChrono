@@ -1,12 +1,8 @@
-#include <TinyGPS++.h>
+#include "NMEAGPS.h"
 #include <SoftwareSerial.h>
-#include <math.h>
 
-int pos = 0;
-float lastSpeed = 0;
-
-TinyGPSPlus gps;
-SoftwareSerial ss(0, 30);
+SoftwareSerial ss(50, 255);
+NMEAGPS gps;
 
 void setup()
 {
@@ -20,6 +16,10 @@ void setup()
 
 void loop()
 {
-  speedProcess(gps.speed.mph(), gps.speed.isValid());
-  smartDelay(10);
+  if (gps.available( ss )) {
+    const gps_fix & fix = gps.read();
+    if (fix.valid.speed)
+      speedProcess( fix.spd.whole ); // knots
+  }
 }
+
