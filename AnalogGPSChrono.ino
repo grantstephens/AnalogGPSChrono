@@ -1,7 +1,7 @@
 #include "NMEAGPS.h"
 #include <SoftwareSerial.h>
 
-SoftwareSerial ss(50, 255);
+SoftwareSerial ss(0, 30);
 NMEAGPS gps;
 
 void setup()
